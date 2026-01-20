@@ -37,7 +37,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center; /* This centralizes everything horizontally */
+            align-items: center; /* Centralizes content */
             padding: 40px 20px;
             box-sizing: border-box;
         }
@@ -57,47 +57,13 @@
         }
 
         .symbol-囍 { font-size: 70px; display: block; margin-bottom: 10px; }
-        
-        h1 { 
-            font-family: 'LoveFont', cursive; 
-            font-size: 3.8rem; 
-            margin: 10px 0; 
-            text-transform: none; 
-            color: #e4cd9b; 
-        }
+        h1 { font-family: 'LoveFont', cursive; font-size: 3.8rem; margin: 10px 0; text-transform: none; color: #e4cd9b; }
 
-        .date-container { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 15px; 
-            margin: 25px 0; 
-            font-size: 1.5rem; 
-        }
-
-        .day-circle { 
-            background: #fff8ee; 
-            color: #600e0e; 
-            width: 50px; 
-            height: 50px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-weight: bold; 
-        }
+        .date-container { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 25px 0; font-size: 1.5rem; }
+        .day-circle { background: #fff8ee; color: #600e0e; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
         .details-box { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
         
-        .map-link { 
-            color: #fff8ee; 
-            font-size: 0.85rem; 
-            text-decoration: underline; 
-            display: block; 
-            margin-top: 5px; 
-            margin-bottom: 15px; 
-        }
-
         .btn {
             background-color: #e4cd9b;
             color: #600e0e;
@@ -111,7 +77,7 @@
             margin-top: 10px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-flex; /* Changed to inline-flex for alignment */
+            display: inline-flex;
             justify-content: center;
             align-items: center;
             transition: 0.3s;
@@ -135,37 +101,12 @@
         .timer-unit { display: flex; flex-direction: column; }
         .timer-num { font-size: 1.8rem; font-weight: bold; }
 
-        /* 5. INFO SECTION (TIMELINE & FAQ) */
-        .info-section { 
-            width: 100%; 
-            max-width: 480px; 
-            text-align: center; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        /* 5. INFO SECTION (Timeline & FAQ) */
+        .info-section { width: 100%; max-width: 480px; text-align: center; margin-bottom: 40px; }
+        .info-section h2 { font-family: 'LoveFont', cursive; font-size: 3rem; text-transform: none; color: #600e0e; margin-top: 40px; }
 
-        .info-section h2 { 
-            font-family: 'LoveFont', cursive; 
-            font-size: 3rem; 
-            text-transform: none; 
-            color: #600e0e; 
-            margin-top: 40px; 
-        }
-
-        .timeline { 
-            position: relative; 
-            padding: 20px 0; 
-            text-align: left; 
-            width: 100%;
-        }
-        .timeline-item { 
-            position: relative; 
-            padding-left: 40px; 
-            margin-bottom: 25px; 
-            border-left: 2px solid #600e0e; 
-            margin-left: 6px; 
-        }
+        .timeline { position: relative; padding: 20px 0; text-align: left; width: 100%; }
+        .timeline-item { position: relative; padding-left: 40px; margin-bottom: 25px; border-left: 2px solid #600e0e; margin-left: 6px; }
         .timeline-item::before {
             content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px;
             background: #a65954; border-radius: 50%; border: 2px solid #600e0e;
@@ -173,17 +114,17 @@
         .time-stamp { font-weight: bold; color: #600e0e; font-size: 1.1rem; }
         .event-desc { color: #a65954; text-transform: none; font-size: 0.95rem; display: block;}
 
-        .faq-container { width: 100%; }
-        .faq-item { background: #fff8ee; border: 1px solid #a65954; margin-bottom: 12px; text-align: left; border-radius: 4px; cursor: pointer; width: 100%; }
+        /* FAQ Styling */
+        .faq-item { background: #fff8ee; border: 1px solid #a65954; margin-bottom: 12px; text-align: left; border-radius: 4px; cursor: pointer; width: 100%; overflow: hidden; }
         .faq-question { padding: 18px 20px; display: flex; justify-content: space-between; color: #600e0e; font-weight: bold; font-size: 0.9rem; }
         .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #a65954; text-transform: none; font-size: 0.95rem; line-height: 1.6; }
-        .faq-item.active .faq-answer { max-height: 500px; padding-bottom: 20px; }
+        .faq-item.active .faq-answer { max-height: 800px; padding-bottom: 20px; }
 
         /* 6. BLESSING FUND */
         .blessing-section {
             width: 100%;
             max-width: 480px;
-            margin: 40px 0;
+            margin-bottom: 60px;
             padding: 40px 20px;
             background-color: rgba(166, 89, 84, 0.1); 
             border: 2px dashed #a65954;
@@ -191,10 +132,9 @@
             text-align: center;
             box-sizing: border-box;
         }
-
         .blessing-section h2 { font-family: 'LoveFont', cursive; font-size: 2.8rem; text-transform: none; color: #600e0e; margin-bottom: 15px; }
         .blessing-text { color: #a65954; font-size: 1.1rem; margin-bottom: 20px; text-transform: none; }
-        .qr-container { background: white; padding: 15px; display: inline-block; border-radius: 10px; margin-bottom: 10px; }
+        .qr-container { background: white; padding: 15px; display: inline-block; border-radius: 10px; }
         .qr-code-img { width: 220px; height: auto; display: block; }
     </style>
 </head>
@@ -205,21 +145,15 @@
             <span class="symbol-囍">囍</span>
             <div style="font-size: 0.85rem; letter-spacing: 2px;">Together with our parents</div>
             <h1>Nicholas & Rae Enn</h1>
-
             <div class="date-container">
                 <span>JULY</span> <div class="day-circle">11</div> <span>2026</span>
             </div>
-
             <div class="details-box">
                 <strong style="color: #fff8ee;">Solemnisation</strong><br>
-                Bukit Batok Presbyterian Church | 10:00 AM<br>
-                <a href="YOUR_CHURCH_MAP_LINK" target="_blank" class="map-link">Open in Google Maps</a>
-                
+                Bukit Batok Presbyterian Church | 10:00 AM<br><br>
                 <strong style="color: #fff8ee;">Lunch Reception</strong><br>
-                Shangri-La Singapore | 12:30 PM<br>
-                <a href="YOUR_SHANGRI_LA_MAP_LINK" target="_blank" class="map-link">Open in Google Maps</a>
+                Shangri-La Singapore | 12:30 PM
             </div>
-
             <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" target="_blank" class="btn">RSVP HERE</a>
         </div>
 
@@ -244,45 +178,88 @@
             </div>
 
             <h2>Wedding FAQ</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question"><span>Ceremony & Timeline </span><span>+</span></div>
-                    <div class="faq-answer">
-                        <b>When should i arrive?</b><br>
-                        We recommend arriving at least 15 mins before the ceremony begins, so you can be seated and relaxed before the celebration starts.<br><br>
-                        <b>What time does everything start?</b><br>
-                        Please check "the timeline" section above - it includes ceremony start time, transport details, and reception schedule.
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Ceremony & Timeline </span><span>+</span></div>
+                <div class="faq-answer">
+                    <b>When should i arrive?</b><br>
+                    We recommend arriving at least 15 mins before the ceremony begins.<br><br>
+                    <b>What time does everything start?</b><br>
+                    Please check "the timeline" section above for all timings.
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question"><span>Is there parking at church? </span><span>+</span></div>
-                    <div class="faq-answer">Yes! Public HDB parking is available near Bukit Batok Presbyterian Church.</div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Parking at church? </span><span>+</span></div>
+                <div class="faq-answer">Yes! Public HDB parking is available near Bukit Batok Presbyterian Church.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span>Bus stop to church?</span><span>+</span></div>
+                <div class="faq-answer">
+                    1. Bt Batok St 11 (Stop 43331) ~ 2 mins walk (Bus 991, 991A)<br>
+                    2. Bt Batok West Ave 3 (Stop 43341) ~ 5 mins walk (Bus 157, 174, 870)<br>
+                    3. Bt Batok West Ave 6 ~ 8 mins walk (Bus 176, 188)
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question"><span>Bus stop to church?</span><span>+</span></div>
-                    <div class="faq-answer">
-                        1. Bt Batok St 11 (Stop 43331) ~ 2 mins walk (Bus 991, 991A)<br>
-                        2. Bt Batok West Ave 3 (Stop 43341) ~ 5 mins walk (Bus 157, 174, 178, 506, 870, 991)<br>
-                        3. Bt Batok West Ave 6 ~ 8 mins walk (Bus 176, 188, 870, 991)
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Parking at Shangri-la?</span><span>+</span></div>
+                <div class="faq-answer">Complimentary coupons are available (first come first served). Request via the RSVP link!</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span>Transport to the Hotel?</span><span>+</span></div>
+                <div class="faq-answer">
+                    1. Stevens Rd (Stop 40201) ~ 9 mins walk (Bus 105, 132, 190)<br>
+                    2. Orchard Rd (Stop 09169) ~ 9 mins walk (Bus 7, 36, 111)<br><br>
+                    <b>Nearest MRT:</b> Orchard MRT (NS22) ~ 14 min walk.
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question"><span>Parking at Shangri-la?</span><span>+</span></div>
-                    <div class="faq-answer">Complimentary coupons are available on a first come first serve basis. Just request these via the RSVP link!</div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Dress Code</span><span>+</span></div>
+                <div class="faq-answer">Please come dressed in smart casual - we want you to feel good while celebrating with us!</div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question"><span>Transport to the Hotel?</span><span>+</span></div>
-                    <div class="faq-answer">
-                        1. Stevens Rd (Stop 40201) ~ 9 mins walk (Bus 105, 132, 190, 972)<br>
-                        2. Orchard Rd (Stop 09169) ~ 9 mins walk (Bus 7, 36, 77, 106, 111)<br><br>
-                        <b>Nearest MRT:</b> Orchard MRT (NS22) ~ 14 min walk.
-                    </div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>RSVP deadline? </span><span>+</span></div>
+                <div class="faq-answer">Please RSVP via the link by 12 June 2026.</div>
+            </div>
+        </div>
 
-                <div class="faq-item">
-                    <div class="faq-question"><span>What is the dress code? </span><span>+</span></div>
-                    <div class
+        <div class="blessing-section">
+            <h2>Blessing Fund</h2>
+            <div class="blessing-text">
+                Your presence is our greatest gift.<br>
+                Should you wish to bless us further, please scan below.
+            </div>
+            <div class="qr-container">
+                <img src="paylah.png" alt="Blessing QR" class="qr-code-img">
+            </div>
+            <p style="text-transform:none; font-size:0.8rem; color:#600e0e; margin-top:10px; font-style:italic;">
+                Tip: Screenshot and upload to your PayLah! app
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Countdown Logic
+        const weddingDate = new Date("July 11, 2026 10:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
