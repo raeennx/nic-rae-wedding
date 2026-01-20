@@ -1,107 +1,263 @@
-<style>
-    /* Blessing Fund Section */
-    .blessing-section {
-        width: 100%;
-        max-width: 480px;
-        margin: 40px 0;
-        padding: 40px 20px;
-        background-color: rgba(166, 89, 84, 0.1); 
-        border: 2px dashed #a65954;
-        border-radius: 15px;
-        text-align: center;
-        box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas & Rae Enn Wedding</title>
+    <style>
+        /* 1. CUSTOM FONTS */
+        @font-face {
+            font-family: 'BarlowCondensed';
+            src: url('BarlowCondensed-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
 
-    .blessing-section h2 {
-        font-family: 'LoveFont', cursive;
-        font-size: 2.8rem;
-        text-transform: none;
-        color: #600e0e;
-        margin-bottom: 15px;
-    }
+        @font-face {
+            font-family: 'LoveFont';
+            src: url('Love.otf') format('opentype');
+            font-weight: normal;
+        }
 
-    .blessing-text {
-        font-family: 'BarlowCondensed';
-        color: #a65954;
-        font-size: 1.1rem;
-        line-height: 1.4;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+        /* 2. GLOBAL STYLES */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #fff8ee; /* Your Cream Background */
+            color: #e4cd9b; /* Your Gold Font Color */
+            font-family: 'BarlowCondensed', sans-serif;
+            text-transform: uppercase;
+            scroll-behavior: smooth;
+        }
 
-    .qr-container {
-        background: white;
-        padding: 15px;
-        display: inline-block;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
+        .floral-wrapper {
+            background-image: url('floral-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-    .qr-code-img {
-        width: 220px; /* Slightly larger for PayLah! QR details */
-        height: auto;
-        display: block;
-    }
+        /* 3. INVITATION CARD */
+        .invite-card {
+            background-color: #a65954; /* Secondary Red */
+            border: 5px solid #600e0e; /* Dark Red Borders */
+            padding: 60px 30px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            clip-path: polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%);
+            margin-bottom: 30px;
+        }
 
-    .mobile-tip {
-        font-size: 0.75rem;
-        color: #600e0e;
-        margin-top: 15px;
-        font-style: italic;
-        text-transform: none; /* easier to read lowercase */
-    }
+        .symbol-囍 { font-size: 70px; display: block; margin-bottom: 10px; }
+        
+        h1 { 
+            font-family: 'LoveFont', cursive; 
+            font-size: 3.8rem; 
+            margin: 10px 0; 
+            text-transform: none; 
+            color: #e4cd9b; 
+        }
 
-    .paylah-logo {
-        margin-top: 15px;
-        height: 35px;
-    }
-</style>
+        .date-container { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; 
+            margin: 25px 0; 
+            font-size: 1.5rem; 
+        }
 
-<div class="blessing-section">
-    <h2>Blessing Fund</h2>
-    
-    <div class="blessing-text">
-        Your presence is our biggest present.<br>
-        However, if you would like to bless us even more,<br>
-        feel free to scan the QR below.
-    </div>
+        .day-circle { 
+            background: #fff8ee; 
+            color: #600e0e; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold; 
+        }
 
-    <div class="qr-container">
-        <img src="paylah.png" alt="Wedding Blessing QR Code" class="qr-code-img">
-    </div>
-    
-    <div class="mobile-tip">
-        Tip: If viewing on mobile, you can screenshot this QR and <br>
-        upload it to your PayLah! or banking app.
-    </div>
-    
-    <img src="https://www.dbs.com.sg/iwov-resources/images/payment/paylah/dbs-paylah-logo.png" alt="DBS PayLah!" class="paylah-logo">
-</div>
+        .details-box { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
+        
+        .map-link { 
+            color: #fff8ee; 
+            font-size: 0.85rem; 
+            text-decoration: underline; 
+            display: block; 
+            margin-top: 5px; 
+            margin-bottom: 15px; 
+        }
+
+        .btn {
+            background-color: #e4cd9b;
+            color: #600e0e;
+            padding: 18px 30px;
+            border: none;
+            width: 100%;
+            font-family: 'BarlowCondensed';
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn:hover { background-color: #fff8ee; transform: scale(1.02); }
+
+        /* 4. COUNTDOWN */
+        .countdown-container {
+            text-align: center;
+            background: rgba(96, 14, 14, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 440px;
+            margin-bottom: 40px;
+            border: 1px solid #e4cd9b;
+        }
+        #timer { display: flex; justify-content: space-around; font-size: 1.2rem; }
+        .timer-unit { display: flex; flex-direction: column; }
+        .timer-num { font-size: 1.8rem; font-weight: bold; }
+
+        /* 5. BLESSING FUND */
+        .blessing-section {
+            width: 100%;
+            max-width: 480px;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background-color: rgba(166, 89, 84, 0.1); 
+            border: 2px dashed #a65954;
+            border-radius: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .blessing-section h2 { font-family: 'LoveFont', cursive; font-size: 2.8rem; text-transform: none; color: #600e0e; margin-bottom: 15px; }
+        .blessing-text { color: #a65954; font-size: 1.1rem; margin-bottom: 20px; }
+        .qr-container { background: white; padding: 15px; display: inline-block; border-radius: 10px; }
+        .qr-code-img { width: 220px; height: auto; display: block; }
+
+        /* 6. TIMELINE & FAQ */
+        .info-section { width: 100%; max-width: 480px; text-align: center; }
+        .info-section h2 { font-family: 'LoveFont', cursive; font-size: 3rem; text-transform: none; color: #600e0e; margin-top: 40px; }
+
+        .timeline { position: relative; padding: 20px 0; text-align: left; }
+        .timeline-item { position: relative; padding-left: 40px; margin-bottom: 25px; border-left: 2px solid #600e0e; margin-left: 6px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px;
+            background: #a65954; border-radius: 50%; border: 2px solid #600e0e;
+        }
+        .time-stamp { font-weight: bold; color: #600e0e; font-size: 1.1rem; }
+        .event-desc { color: #a65954; text-transform: none; font-size: 0.95rem; display: block;}
+
+        .faq-item { background: #fff8ee; border: 1px solid #a65954; margin-bottom: 12px; text-align: left; border-radius: 4px; cursor: pointer; }
+        .faq-question { padding: 18px 20px; display: flex; justify-content: space-between; color: #600e0e; font-weight: bold; font-size: 0.9rem; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #a65954; text-transform: none; font-size: 0.95rem; line-height: 1.6; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="floral-wrapper">
+        <div class="invite-card">
+            <span class="symbol-囍">囍</span>
+            <div style="font-size: 0.85rem; letter-spacing: 2px;">Together with our parents</div>
+            <h1>Nicholas & Rae Enn</h1>
+
             <div class="date-container">
-                <div class="date-line"></div>
-                <span>JULY</span>
-                <div class="day-circle">11</div>
-                <span>2026</span>
-                <div class="date-line"></div>
+                <span>JULY</span> <div class="day-circle">11</div> <span>2026</span>
             </div>
 
             <div class="details-box">
-                <span class="section-title">Solemnisation</span>
-                10:00 AM - 11:30 AM<br>
-                Bukit Batok Presbyterian Church<br>
-                21 Bukit Batok Street 11 S659673
+                <strong style="color: #fff8ee;">Solemnisation</strong><br>
+                Bukit Batok Presbyterian Church | 10:00 AM<br>
+                <a href="YOUR_CHURCH_MAP_LINK" target="_blank" class="map-link">Open in Google Maps</a>
                 
-                <br><br>
-                
-                <span class="section-title">Lunch</span>
-                12:30 PM - 2:30 PM<br>
-                Shangri-La Singapore<br>
-                22 Orange Grove Road S258350
+                <strong style="color: #fff8ee;">Lunch Reception</strong><br>
+                Shangri-La Singapore | 12:30 PM<br>
+                <a href="YOUR_SHANGRI_LA_MAP_LINK" target="_blank" class="map-link">Open in Google Maps</a>
             </div>
 
+            <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" target="_blank" class="btn">RSVP HERE</a>
+        </div>
+
+        <div class="countdown-container">
+            <div id="timer">
+                <div class="timer-unit"><span class="timer-num" id="days">00</span><span>Days</span></div>
+                <div class="timer-unit"><span class="timer-num" id="hours">00</span><span>Hrs</span></div>
+                <div class="timer-unit"><span class="timer-num" id="mins">00</span><span>Mins</span></div>
+                <div class="timer-unit"><span class="timer-num" id="secs">00</span><span>Secs</span></div>
+            </div>
+        </div>
+
+        <div class="blessing-section">
+            <h2>Blessing Fund</h2>
+            <div class="blessing-text">
+                Your presence is our biggest present.<br>
+                However, if you would like to bless us even more,<br>
+                feel free to scan the QR below.
+            </div>
+            <div class="qr-container">
+                <img src="paylah.png" alt="Blessing QR" class="qr-code-img">
+            </div>
+            <p style="text-transform:none; font-size:0.8rem; color:#600e0e; margin-top:10px; font-style:italic;">
+                Tip: Screenshot and upload to your PayLah! app
+            </p>
+        </div>
+
+        <div class="info-section">
+            <h2>The Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="time-stamp">09:45 AM</span><span class="event-desc">Guest Arrival (Please reach 15 mins in advance)</span></div>
+                <div class="timeline-item"><span class="time-stamp">10:00 AM SHARP</span><span class="event-desc">Solemnisation Ceremony Starts</span></div>
+                <div class="timeline-item"><span class="time-stamp">11:45 AM</span><span class="event-desc">Transport leaves Church for Shangri-La</span></div>
+                <div class="timeline-item"><span class="time-stamp">12:00 PM</span><span class="event-desc">Wedding Lunch Reception Starts</span></div>
+                <div class="timeline-item"><span class="time-stamp">02:15 PM</span><span class="event-desc">Last Entry for Guests</span></div>
+                <div class="timeline-item"><span class="time-stamp">02:30 PM</span><span class="event-desc">Lunch Reception Closes</span></div>
+            </div>
+
+            <h2>Wedding FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question"><span>Dress Code</span><span>+</span></div>
+                <div class="faq-answer">The dress code is <b>Smart Casual</b>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Parking at Church?</span><span>+</span></div>
+                <div class="faq-answer">Public HDB parking is available near Bukit Batok Presbyterian Church (paid).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Parking at Shangri-La?</span><span>+</span></div>
+                <div class="faq-answer">Complimentary coupons available. Please request via the RSVP link!</div>
+            </div>
         </div>
     </div>
 
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => item.classList.toggle('active'));
+        });
+
+        // Countdown Logic
+        const weddingDate = new Date("July 11, 2026 10:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
 </body>
 </html>
