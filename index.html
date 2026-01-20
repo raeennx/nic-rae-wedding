@@ -3,87 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding of Nicholas & Rae Enn</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Nicholas & Rae Enn Wedding</title>
     <style>
-        :root {
-            --primary-red: #600e0e; 
-            --gold-accent: #e4cd9b; 
-            --cream-bg: #fff8ee;
+        /* 1. LOAD YOUR CUSTOM FONTS */
+        @font-face {
+            font-family: 'BarlowCondensed';
+            src: url('BarlowCondensed-Medium.ttf') format('truetype');
+            font-weight: 500;
         }
-        body { font-family: 'Noto Serif SC', serif; margin: 0; background-color: var(--primary-red); color: var(--cream-bg); line-height: 1.6; }
-        .hero { padding: 80px 20px; text-align: center; border-bottom: 1px solid var(--gold-accent); }
-        .double-happiness { font-size: 5rem; color: var(--gold-accent); margin-bottom: 20px; }
-        h1 { font-family: 'Ma Shan Zheng', cursive; font-size: 3.5rem; margin: 10px 0; color: var(--cream-bg); }
-        .names-en { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 20px; }
-        .date-banner { font-family: 'Playfair Display', serif; letter-spacing: 4px; border-top: 1px solid var(--gold-accent); border-bottom: 1px solid var(--gold-accent); display: inline-block; padding: 10px 40px; margin: 20px 0; }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .card { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 8px; margin-bottom: 30px; border: 1px solid var(--gold-accent); backdrop-filter: blur(5px); }
-        .card h2 { color: var(--gold-accent); font-family: 'Playfair Display', serif; border-bottom: 1px solid var(--gold-accent); padding-bottom: 10px; margin-top: 0; }
-        .time { font-weight: bold; color: var(--gold-accent); display: block; margin-bottom: 5px; }
-        .btn { display: inline-block; background: var(--gold-accent); color: var(--primary-red); padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 20px; }
-        .footer { text-align: center; padding: 60px; font-size: 0.8rem; color: var(--gold-accent); letter-spacing: 2px; }
-        .welcome-text { text-align: center; font-style: italic; margin-bottom: 40px; color: var(--gold-accent); }
-        .qr-img { width: 200px; height: auto; border: 5px solid white; margin: 15px 0; border-radius: 4px; }
-        @media (max-width: 600px) { h1 { font-size: 2.5rem; } }
+
+        @font-face {
+            font-family: 'LoveFont';
+            src: url('Love.otf') format('opentype');
+            font-weight: normal;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #fff8ee; /* Primary Background Fallback */
+            color: #e4cd9b; /* Gold Font Color */
+            font-family: 'BarlowCondensed', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .floral-wrapper {
+            /* YOUR IMAGE LINKED HERE */
+            background-image: url('floral-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .invite-card {
+            background-color: #a65954; /* Secondary Red */
+            border: 5px solid #600e0e; /* Dark Red Borders */
+            padding: 60px 30px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            /* The unique octagon shape from your invite */
+            clip-path: polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%);
+        }
+
+        .symbol-囍 {
+            font-size: 75px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .parents {
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-family: 'LoveFont', cursive;
+            font-size: 4rem;
+            margin: 5px 0;
+            text-transform: none; 
+            font-weight: normal;
+        }
+
+        .ampersand {
+            font-size: 2rem;
+            margin: -5px 0;
+            font-family: 'BarlowCondensed', sans-serif;
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+        }
+
+        .date-line {
+            height: 1px;
+            background-color: #e4cd9b;
+            width: 50px;
+        }
+
+        .day-circle {
+            background: #fff8ee;
+            color: #600e0e;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .details-box {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .section-title {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            margin-top: 15px;
+            display: block;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-<div class="hero">
-    <div class="double-happiness">囍</div>
-    <h1>郭凯杰 & 张瑞恩</h1>
-    <div class="names-en">NICHOLAS QUEK & CHONG RAE ENN</div>
-    <div class="date-banner">11 JULY 2026</div>
-</div>
+    <div class="floral-wrapper">
+        <div class="invite-card">
+            
+            <span class="symbol-囍">囍</span>
+            
+            <div class="parents">
+                Together with our parents<br>
+                Mr & Mrs Quek Soo Huat<br>
+                Mr & Mrs Chong Hock Chuan
+            </div>
 
-<div class="container">
-    <div class="welcome-text">
-        <p>"Welcome to our wedding website! We are so blessed to have you in our lives and can't wait to celebrate the beginning of our new chapter together."</p>
-    </div>
+            <h1>Nicholas Quek</h1>
+            <div class="ampersand">&</div>
+            <h1>Chong Rae Enn</h1>
 
-    <div class="card">
-        <h2>The Wedding Schedule</h2>
-        <div style="margin-bottom: 25px;">
-            <span class="time">10:00 AM – 11:30 AM</span>
-            <strong>Solemnisation</strong><br>
-            Bukit Batok Presbyterian<br>
-            21 Bukit Batok Street 11, S659673
-        </div>
-        <div>
-            <span class="time">12:30 PM – 2:30 PM</span>
-            <strong>Wedding Lunch</strong><br>
-            Shangri-La Singapore<br>
-            22 Orange Grove Road, S258350
-        </div>
-    </div>
+            <p style="font-size: 0.9rem; letter-spacing: 1px; margin: 25px 0;">Invite you to celebrate their wedding</p>
 
-    <div class="card">
-        <h2>Transport & Parking</h2>
-        <p><strong>Church Parking:</strong> Parking is available at the church, with additional HDB carparks located right beside and opposite the church.</p>
-        <p><strong>Shuttle Service:</strong> A 1-way shuttle bus is provided from church to Shangri-La for guests not driving. <u>Please indicate in the RSVP if you require this.</u></p>
-        <p><strong>Shangri-La Parking:</strong> Complimentary coupons are available. <u>Please request yours via the RSVP form.</u></p>
-    </div>
+            <div class="date-container">
+                <div class="date-line"></div>
+                <span>JULY</span>
+                <div class="day-circle">11</div>
+                <span>2026</span>
+                <div class="date-line"></div>
+            </div>
 
-    <div class="card">
-        <h2>Honeymoon Fund</h2>
-        <p>Your presence at our wedding is our greatest joy. However, should you wish to honor us with a gift, it would be very appreciated.</p>
-        <div style="text-align: center;">
-            <img src="paylah.png" alt="PayLah! QR Code" class="qr-img">
-            <p style="font-size: 0.9rem; color: var(--gold-accent);">Scan to contribute via PayLah!</p>
+            <div class="details-box">
+                <span class="section-title">Solemnisation</span>
+                10:00 AM - 11:30 AM<br>
+                Bukit Batok Presbyterian Church<br>
+                21 Bukit Batok Street 11 S659673
+                
+                <br><br>
+                
+                <span class="section-title">Lunch</span>
+                12:30 PM - 2:30 PM<br>
+                Shangri-La Singapore<br>
+                22 Orange Grove Road S258350
+            </div>
+
         </div>
     </div>
-
-    <div class="card" style="text-align:center;">
-        <h2>RSVP</h2>
-        <p>Please confirm your attendance via the link or scan the QR code below.</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://form.gov.sg/690b6b16024ee5eebb047f92" alt="RSVP QR Code" style="border: 5px solid white; margin: 15px 0;">
-        <br>
-        <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" class="btn">RSVP Here</a>
-    </div>
-</div>
-
-<div class="footer">NICHOLAS & RAE ENN • 11.07.2026</div>
 
 </body>
 </html>
