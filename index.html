@@ -1,148 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas & Rae Enn Wedding</title>
-    <style>
-        /* 1. LOAD YOUR CUSTOM FONTS */
-        @font-face {
-            font-family: 'BarlowCondensed';
-            src: url('BarlowCondensed-Medium.ttf') format('truetype');
-            font-weight: 500;
-        }
+<style>
+    /* Blessing Fund Section */
+    .blessing-section {
+        width: 100%;
+        max-width: 480px;
+        margin: 40px 0;
+        padding: 40px 20px;
+        background-color: rgba(166, 89, 84, 0.1); 
+        border: 2px dashed #a65954;
+        border-radius: 15px;
+        text-align: center;
+        box-sizing: border-box;
+    }
 
-        @font-face {
-            font-family: 'LoveFont';
-            src: url('Love.otf') format('opentype');
-            font-weight: normal;
-        }
+    .blessing-section h2 {
+        font-family: 'LoveFont', cursive;
+        font-size: 2.8rem;
+        text-transform: none;
+        color: #600e0e;
+        margin-bottom: 15px;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: #fff8ee; /* Primary Background Fallback */
-            color: #e4cd9b; /* Gold Font Color */
-            font-family: 'BarlowCondensed', sans-serif;
-            text-transform: uppercase;
-        }
+    .blessing-text {
+        font-family: 'BarlowCondensed';
+        color: #a65954;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-        .floral-wrapper {
-            /* YOUR IMAGE LINKED HERE */
-            background-image: url('floral-bg.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
+    .qr-container {
+        background: white;
+        padding: 15px;
+        display: inline-block;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-        .invite-card {
-            background-color: #a65954; /* Secondary Red */
-            border: 5px solid #600e0e; /* Dark Red Borders */
-            padding: 60px 30px;
-            max-width: 480px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            /* The unique octagon shape from your invite */
-            clip-path: polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%);
-        }
+    .qr-code-img {
+        width: 220px; /* Slightly larger for PayLah! QR details */
+        height: auto;
+        display: block;
+    }
 
-        .symbol-囍 {
-            font-size: 75px;
-            margin-bottom: 10px;
-            display: block;
-        }
+    .mobile-tip {
+        font-size: 0.75rem;
+        color: #600e0e;
+        margin-top: 15px;
+        font-style: italic;
+        text-transform: none; /* easier to read lowercase */
+    }
 
-        .parents {
-            font-size: 1rem;
-            letter-spacing: 1.5px;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
+    .paylah-logo {
+        margin-top: 15px;
+        height: 35px;
+    }
+</style>
 
-        h1 {
-            font-family: 'LoveFont', cursive;
-            font-size: 4rem;
-            margin: 5px 0;
-            text-transform: none; 
-            font-weight: normal;
-        }
+<div class="blessing-section">
+    <h2>Blessing Fund</h2>
+    
+    <div class="blessing-text">
+        Your presence is our biggest present.<br>
+        However, if you would like to bless us even more,<br>
+        feel free to scan the QR below.
+    </div>
 
-        .ampersand {
-            font-size: 2rem;
-            margin: -5px 0;
-            font-family: 'BarlowCondensed', sans-serif;
-        }
-
-        .date-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-        }
-
-        .date-line {
-            height: 1px;
-            background-color: #e4cd9b;
-            width: 50px;
-        }
-
-        .day-circle {
-            background: #fff8ee;
-            color: #600e0e;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.4rem;
-        }
-
-        .details-box {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            letter-spacing: 1px;
-            margin-top: 20px;
-        }
-
-        .section-title {
-            text-decoration: underline;
-            text-underline-offset: 6px;
-            margin-top: 15px;
-            display: block;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="floral-wrapper">
-        <div class="invite-card">
-            
-            <span class="symbol-囍">囍</span>
-            
-            <div class="parents">
-                Together with our parents<br>
-                Mr & Mrs Quek Soo Huat<br>
-                Mr & Mrs Chong Hock Chuan
-            </div>
-
-            <h1>Nicholas Quek</h1>
-            <div class="ampersand">&</div>
-            <h1>Chong Rae Enn</h1>
-
-            <p style="font-size: 0.9rem; letter-spacing: 1px; margin: 25px 0;">Invite you to celebrate their wedding</p>
-
+    <div class="qr-container">
+        <img src="paylah.png" alt="Wedding Blessing QR Code" class="qr-code-img">
+    </div>
+    
+    <div class="mobile-tip">
+        Tip: If viewing on mobile, you can screenshot this QR and <br>
+        upload it to your PayLah! or banking app.
+    </div>
+    
+    <img src="https://www.dbs.com.sg/iwov-resources/images/payment/paylah/dbs-paylah-logo.png" alt="DBS PayLah!" class="paylah-logo">
+</div>
             <div class="date-container">
                 <div class="date-line"></div>
                 <span>JULY</span>
