@@ -30,14 +30,14 @@
         }
 
         .floral-wrapper {
-            background-image: url('floral-bg.jpg'); 
+            background-image: url('Floral background.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centralizes content */
+            align-items: center; 
             padding: 40px 20px;
             box-sizing: border-box;
         }
@@ -64,6 +64,15 @@
 
         .details-box { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
         
+        .map-link { 
+            color: #fff8ee; 
+            font-size: 0.85rem; 
+            text-decoration: underline; 
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: none;
+        }
+
         .btn {
             background-color: #e4cd9b;
             color: #600e0e;
@@ -81,9 +90,7 @@
             justify-content: center;
             align-items: center;
             transition: 0.3s;
-            box-sizing: border-box;
         }
-        .btn:hover { background-color: #fff8ee; transform: scale(1.02); }
 
         /* 4. COUNTDOWN */
         .countdown-container {
@@ -95,13 +102,12 @@
             max-width: 440px;
             margin-bottom: 40px;
             border: 1px solid #e4cd9b;
-            box-sizing: border-box;
         }
         #timer { display: flex; justify-content: space-around; font-size: 1.2rem; }
         .timer-unit { display: flex; flex-direction: column; }
         .timer-num { font-size: 1.8rem; font-weight: bold; }
 
-        /* 5. INFO SECTION (Timeline & FAQ) */
+        /* 5. INFO SECTION */
         .info-section { width: 100%; max-width: 480px; text-align: center; margin-bottom: 40px; }
         .info-section h2 { font-family: 'LoveFont', cursive; font-size: 3rem; text-transform: none; color: #600e0e; margin-top: 40px; }
 
@@ -130,10 +136,8 @@
             border: 2px dashed #a65954;
             border-radius: 15px;
             text-align: center;
-            box-sizing: border-box;
         }
         .blessing-section h2 { font-family: 'LoveFont', cursive; font-size: 2.8rem; text-transform: none; color: #600e0e; margin-bottom: 15px; }
-        .blessing-text { color: #a65954; font-size: 1.1rem; margin-bottom: 20px; text-transform: none; }
         .qr-container { background: white; padding: 15px; display: inline-block; border-radius: 10px; }
         .qr-code-img { width: 220px; height: auto; display: block; }
     </style>
@@ -148,122 +152,96 @@
             <div class="date-container">
                 <span>JULY</span> <div class="day-circle">11</div> <span>2026</span>
             </div>
+            
             <div class="details-box">
                 <strong style="color: #fff8ee;">Solemnisation</strong><br>
                 Bukit Batok Presbyterian Church | 10:00 AM<br>
-                <a href="https://maps.app.goo.gl/3fX3y9x2N5pXy8Z86" target="_blank" class="map-link">Open in Google Maps</a><br>
-                <br>
+                <a href="https://maps.app.goo.gl/kX6mYm9Ym9Ym9Ym9" target="_blank" class="map-link">Open in Google Maps</a><br>
+                
                 <strong style="color: #fff8ee;">Lunch Reception</strong><br>
                 Shangri-La Singapore | 12:30 PM<br>
-                <a href="https://maps.app.goo.gl/8Jz8N4x7A8N7R8z86" target="_blank" class="map-link">Open in Google Maps</a>
-    </div>
-                </div>
-                <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" target="_blank" class="btn">RSVP HERE</a>
+                <a href="https://maps.app.goo.gl/yX7mYm9Ym9Ym9Ym9" target="_blank" class="map-link">Open in Google Maps</a>
             </div>
-    
-            <div class="countdown-container">
-                <div id="timer">
-                    <div class="timer-unit"><span class="timer-num" id="days">00</span><span>Days</span></div>
-                    <div class="timer-unit"><span class="timer-num" id="hours">00</span><span>Hrs</span></div>
-                    <div class="timer-unit"><span class="timer-num" id="mins">00</span><span>Mins</span></div>
-                    <div class="timer-unit"><span class="timer-num" id="secs">00</span><span>Secs</span></div>
-                </div>
-            </div>
-    
-            <div class="info-section">
-                <h2>The Timeline</h2>
-                <div class="timeline">
-                    <div class="timeline-item"><span class="time-stamp">09:45 AM</span><span class="event-desc">Guest Arrival (Please reach 15 mins in advance)</span></div>
-                    <div class="timeline-item"><span class="time-stamp">10:00 AM SHARP</span><span class="event-desc">Solemnisation Ceremony Starts</span></div>
-                    <div class="timeline-item"><span class="time-stamp">11:45 AM</span><span class="event-desc">Transport leaves Church for Shangri-La</span></div>
-                    <div class="timeline-item"><span class="time-stamp">12:00 PM</span><span class="event-desc">Wedding Lunch Reception Starts</span></div>
-                    <div class="timeline-item"><span class="time-stamp">02:15 PM</span><span class="event-desc">Last Entry for Guests</span></div>
-                    <div class="timeline-item"><span class="time-stamp">02:30 PM</span><span class="event-desc">Lunch Reception Closes</span></div>
-                </div>
-    
-                <h2>Wedding FAQ</h2>
-                <div class="faq-item">
-                    <div class="faq-question"><span>Ceremony & Timeline </span><span>+</span></div>
-                    <div class="faq-answer">
-                        <b>When should i arrive?</b><br>
-                        We recommend arriving at least 15 mins before the ceremony begins.<br><br>
-                        <b>What time does everything start?</b><br>
-                        Please check "the timeline" section above for all timings.
-                    </div>
-                </div>
-    
-                <div class="faq-item">
-                    <div class="faq-question"><span>Parking at church? </span><span>+</span></div>
-                    <div class="faq-answer">Yes! Public HDB parking is available near Bukit Batok Presbyterian Church.</div>
-                </div>
-    
-                <div class="faq-item">
-                    <div class="faq-question"><span>Bus stop to church?</span><span>+</span></div>
-                    <div class="faq-answer">
-                        1. Bt Batok St 11 (Stop 43331) ~ 2 mins walk (Bus 991, 991A)<br>
-                        2. Bt Batok West Ave 3 (Stop 43341) ~ 5 mins walk (Bus 157, 174, 870)<br>
-                        3. Bt Batok West Ave 6 ~ 8 mins walk (Bus 176, 188)
-                    </div>
-                </div>
-    
-                <div class="faq-item">
-                    <div class="faq-question"><span>Parking at Shangri-la?</span><span>+</span></div>
-                    <div class="faq-answer">Complimentary coupons are available (first come first served). Request via the RSVP link!</div>
-                </div>
-    
-                <div class="faq-item">
-                    <div class="faq-question"><span>Transport to the Hotel?</span><span>+</span></div>
-                    <div class="faq-answer">
-                        1. Stevens Rd (Stop 40201) ~ 9 mins walk (Bus 105, 132, 190)<br>
-                        2. Orchard Rd (Stop 09169) ~ 9 mins walk (Bus 7, 36, 111)<br><br>
-                        <b>Nearest MRT:</b> Orchard MRT (NS22) ~ 14 min walk.
-                    </div>
-                </div>
-    
-                <div class="faq-item">
-                    <div class="faq-question"><span>Dress Code</span><span>+</span></div>
-                    <div class="faq-answer">Please come dressed in smart casual - we want you to feel good while celebrating with us!</div>
-                </div>
-    
-                <div class="faq-item">
-                    <div class="faq-question"><span>RSVP deadline? </span><span>+</span></div>
-                    <div class="faq-answer">Please RSVP via the link by 12 June 2026.</div>
-                </div>
-            </div>
-    
-            <div class="blessing-section">
-                <h2>Blessing Fund</h2>
-                <div class="blessing-text">
-                    Your presence is our greatest gift.<br>
-                    Should you wish to bless us further, please scan below.
-                </div>
-                <div class="qr-container">
-                    <img src="paylah.png" alt="Blessing QR" class="qr-code-img">
-                </div>
-                <p style="text-transform:none; font-size:0.8rem; color:#600e0e; margin-top:10px; font-style:italic;">
-                    Tip: Screenshot and upload to your PayLah! app
-                </p>
+
+            <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" target="_blank" class="btn">RSVP HERE</a>
+        </div>
+
+        <div class="countdown-container">
+            <div id="timer">
+                <div class="timer-unit"><span class="timer-num" id="days">00</span><span>Days</span></div>
+                <div class="timer-unit"><span class="timer-num" id="hours">00</span><span>Hrs</span></div>
+                <div class="timer-unit"><span class="timer-num" id="mins">00</span><span>Mins</span></div>
+                <div class="timer-unit"><span class="timer-num" id="secs">00</span><span>Secs</span></div>
             </div>
         </div>
-    
-        <script>
-            // FAQ Toggle Logic
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-    
-            // Countdown Logic
-            const weddingDate = new Date("July 11, 2026 10:00:00").getTime();
-            setInterval(function() {
-                const now = new Date().getTime();
-                const distance = weddingDate - now;
-                document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-                document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
-            }, 1000);
-        </script>
-    </body>
-    </html>
+
+        <div class="info-section">
+            <h2>The Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="time-stamp">09:45 AM</span><span class="event-desc">Guest Arrival (Please reach 15 mins in advance)</span></div>
+                <div class="timeline-item"><span class="time-stamp">10:00 AM SHARP</span><span class="event-desc">Solemnisation Ceremony Starts</span></div>
+                <div class="timeline-item"><span class="time-stamp">11:45 AM</span><span class="event-desc">Transport leaves Church for Shangri-La</span></div>
+                <div class="timeline-item"><span class="time-stamp">12:00 PM</span><span class="event-desc">Wedding Lunch Reception Starts</span></div>
+                <div class="timeline-item"><span class="time-stamp">02:30 PM</span><span class="event-desc">Lunch Reception Closes</span></div>
+            </div>
+
+            <h2>Wedding FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question"><span>Ceremony & Timeline </span><span>+</span></div>
+                <div class="faq-answer">Please arrive 15 mins early to be seated comfortably.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question"><span>Is there parking at church?</span><span>+</span></div>
+                <div class="faq-answer">Yes! Public HDB parking is available near Bukit Batok Presbyterian Church.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span>Parking at Shangri-la?</span><span>+</span></div>
+                <div class="faq-answer">Complimentary coupons are available (first come first served). Request via the RSVP link!</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span>Dress Code</span><span>+</span></div>
+                <div class="faq-answer">Please come dressed in smart casual - we want you to feel good while celebrating with us!</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span>When is the RSVP deadline?</span><span>+</span></div>
+                <div class="faq-answer">Please RSVP via the link by 12 June 2026.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span>Can I bring a plus one?</span><span>+</span></div>
+                <div class="faq-answer">Due to venue capacity, we can only accommodate those specifically named on the invitation. Thank you for understanding!</div>
+            </div>
+        </div>
+
+        <div class="blessing-section">
+            <h2>Blessing Fund</h2>
+            <div style="color: #a65954; text-transform: none; margin-bottom: 20px;">
+                Your presence is our greatest gift. Should you wish to bless us further, scan below.
+            </div>
+            <div class="qr-container">
+                <img src="paylah.png" alt="Blessing QR" class="qr-code-img">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => item.classList.toggle('active'));
+        });
+
+        const weddingDate = new Date("July 11, 2026 10:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
