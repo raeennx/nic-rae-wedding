@@ -103,6 +103,7 @@
             <div><span id="days" style="font-size: 2.5rem;">0</span><br><small>DAYS</small></div>
             <div><span id="hours" style="font-size: 2.5rem;">0</span><br><small>HOURS</small></div>
             <div><span id="mins" style="font-size: 2.5rem;">0</span><br><small>MINS</small></div>
+            <div><span id="secs" style="font-size: 2.5rem;">0</span><br><small>SECS</small></div>
         </div>
     </section>
 
@@ -138,7 +139,7 @@
             <details>
                 <summary>Dress Code</summary>
                 <div class="faq-content">We would love to see you in something comfortable and presentable!<br> 
-                    However, please avoid overly casual wear such as slippers, shorts or flipflops.</div>
+                    However, please avoid overly casual wear such as slippers, shorts or flip-flops.</div>
             </details>
             <details>
                 <summary>RSVP Deadline</summary>
@@ -191,6 +192,7 @@
             document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         }, 1000);
 
         function copyNum() {
