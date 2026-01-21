@@ -50,6 +50,26 @@
         .transport-list li::before { content: "•"; color: var(--secondary-color); font-size: 2.5rem; position: absolute; left: 0; top: -10px; }
         .transport-list li strong { display: block; font-size: 1.2rem; }
 
+        /* FAQ ACCORDION */
+        .faq-container { max-width: 600px; margin: 0 auto; text-align: left; }
+        details {
+            border-bottom: 1px solid var(--secondary-color);
+            padding: 15px 0;
+            cursor: pointer;
+        }
+        summary {
+            font-weight: bold;
+            font-size: 1.1rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; color: var(--secondary-color); font-size: 1.5rem; }
+        details[open] summary::after { content: '−'; }
+        .faq-content { padding-top: 10px; font-size: 1rem; opacity: 0.9; line-height: 1.4; }
+
         /* BUTTONS */
         .btn {
             background-color: var(--font-color);
@@ -67,7 +87,6 @@
         }
         .btn:hover { background-color: var(--secondary-color); color: var(--font-color); transform: scale(1.05); }
 
-        /* RESPONSIVE TWEAKS */
         @media (max-width: 600px) {
             .transport-box { padding: 30px 15px; }
             .transport-list li { font-size: 1rem; }
@@ -105,6 +124,36 @@
     </section>
 
     <section class="section">
+        <h2 class="font-love" style="font-size: 3rem;">Wedding FAQ</h2>
+        <div class="faq-container">
+            <details>
+                <summary>Ceremony & Timeline</summary>
+                <div class="faq-content">Our Solemnisation begins at 10:00 AM, followed by a Wedding Lunch at 12:30 PM. Please refer to the celebration section above for venue addresses.</div>
+            </details>
+            <details>
+                <summary>Dress Code</summary>
+                <div class="faq-content">We would love to see you in Formal or Batik attire!</div>
+            </details>
+            <details>
+                <summary>RSVP Deadline</summary>
+                <div class="faq-content">Please let us know if you can join us by 11 June 2026.</div>
+            </details>
+            <details>
+                <summary>Closest Bus Stop (Church)</summary>
+                <div class="faq-content">The nearest bus stop is 'Blk 102' (Stop ID: 43381) along Bukit Batok East Ave 6.</div>
+            </details>
+            <details>
+                <summary>Closest Bus Stop (Hotel)</summary>
+                <div class="faq-content">The nearest bus stops are 'Royal Thai Embassy' (Stop ID: 09171) or 'Delfi Orchard' (Stop ID: 09169).</div>
+            </details>
+            <details>
+                <summary>Can I bring a plus one?</summary>
+                <div class="faq-content">Due to venue capacity, we can only accommodate guests specifically named on the invitation. We appreciate your understanding!</div>
+            </details>
+        </div>
+    </section>
+
+    <section class="section">
         <div class="transport-box">
             <h2 class="font-love" style="font-size: 3rem; margin-top: 0;">Transport & Parking</h2>
             <ul class="transport-list">
@@ -121,7 +170,7 @@
         <h2 class="font-love" style="font-size: 3rem;">Blessing Fund</h2>
         <p>If you wish to gift us digitally, you may use the details below.</p>
         <div style="background: #fff; border: 1px solid var(--secondary-color); padding: 30px; display: inline-block; border-radius: 8px;">
-            <img src="paynow.jpeg" alt="PayNow" style="width: 200px; height: auto;"><br>
+            <img src="paynow.jpeg" alt="PayNow QR Code" style="width: 200px; height: auto;"><br>
             <button class="btn" style="font-size: 1rem; padding: 10px 20px; margin-top: 15px;" onclick="copyNum()">COPY: 96155043</button>
             <p id="msg" style="font-size: 0.8rem; margin: 10px 0 0 0; color: green; height: 15px;"></p>
         </div>
