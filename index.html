@@ -3,247 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas Quek & Chong Rae Enn Wedding</title>
+    <title>Nicholas & Rae Enn's Wedding</title>
+    
+    <meta property="og:title" content="Nicholas & Rae Enn's Wedding">
+    <meta property="og:description" content="11 July 2026 - Join us as we celebrate our special day.">
+    <meta property="og:image" content="paynow.jpeg"> 
+
     <style>
-        /* 1. CUSTOM FONTS */
-        @font-face {
-            font-family: 'BarlowCondensed';
-            src: url('BarlowCondensed-Medium.ttf') format('truetype');
-            font-weight: 500;
+        @font-face { font-family: 'Love'; src: url('Love.otf') format('opentype'); }
+        @font-face { font-family: 'BarlowCondensed'; src: url('BarlowCondensed-Medium.ttf') format('truetype'); font-weight: 500; }
+
+        :root {
+            --base-color: #fff8ee;
+            --secondary-color: #e4cd9b;
+            --font-color: #600e0e;
         }
 
-        @font-face {
-            font-family: 'LoveFont';
-            src: url('Love.otf') format('opentype');
-            font-weight: normal;
-        }
-
-        /* 2. GLOBAL STYLES */
-        body, html {
+        body {
+            background-color: var(--base-color);
+            color: var(--font-color);
+            font-family: 'BarlowCondensed', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff8ee;
-            color: #e4cd9b;
-            font-family: 'BarlowCondensed', sans-serif;
-            text-transform: uppercase;
-            scroll-behavior: smooth;
-        }
-
-        .floral-wrapper {
-            background-image: url('Floral background.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            padding: 40px 20px;
-            box-sizing: border-box;
-        }
-
-        /* 3. INVITATION CARD */
-        .invite-card {
-            background-color: #a65954;
-            border: 5px solid #600e0e;
-            padding: 60px 30px;
-            max-width: 480px;
-            width: 100%;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            clip-path: polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%);
-            margin-bottom: 30px;
-            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
-        .symbol-囍 { font-size: 70px; display: block; margin-bottom: 10px; }
-        h1 { font-family: 'LoveFont', cursive; font-size: 3.8rem; margin: 10px 0; text-transform: none; color: #e4cd9b; }
-
-        .date-container { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 25px 0; font-size: 1.5rem; }
-        .day-circle { background: #fff8ee; color: #600e0e; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-
-        .details-box { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
+        .section { padding: 50px 20px; max-width: 800px; margin: auto; }
+        .font-love { font-family: 'Love', serif; font-weight: normal; }
         
-        .map-link { 
-            color: #fff8ee; 
-            font-size: 0.85rem; 
-            text-decoration: underline; 
-            display: inline-block;
-            margin-bottom: 15px;
-            text-transform: none;
+        /* HERO */
+        .hero-title { font-size: clamp(3rem, 10vw, 4.5rem); margin-bottom: 10px; }
+
+        /* TRANSPORT BOX */
+        .transport-box {
+            background-color: #fff;
+            border: 1px solid var(--secondary-color);
+            padding: 40px 25px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 4px;
         }
 
+        .transport-list { list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 0 auto; }
+        .transport-list li { position: relative; padding-left: 35px; margin-bottom: 25px; font-size: 1.1rem; }
+        .transport-list li::before { content: "•"; color: var(--secondary-color); font-size: 2.5rem; position: absolute; left: 0; top: -10px; }
+        .transport-list li strong { display: block; font-size: 1.2rem; }
+
+        /* BUTTONS */
         .btn {
-            background-color: #e4cd9b;
-            color: #600e0e;
-            padding: 18px 30px;
-            border: none;
-            width: 100%;
-            font-family: 'BarlowCondensed';
-            font-size: 1.3rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-top: 10px;
-            cursor: pointer;
+            background-color: var(--font-color);
+            color: var(--base-color);
+            padding: 18px 40px;
             text-decoration: none;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.2rem;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'BarlowCondensed';
         }
+        .btn:hover { background-color: var(--secondary-color); color: var(--font-color); transform: scale(1.05); }
 
-        /* 4. COUNTDOWN */
-        .countdown-container {
-            text-align: center;
-            background: rgba(96, 14, 14, 0.85);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 440px;
-            margin-bottom: 40px;
-            border: 1px solid #e4cd9b;
+        /* RESPONSIVE TWEAKS */
+        @media (max-width: 600px) {
+            .transport-box { padding: 30px 15px; }
+            .transport-list li { font-size: 1rem; }
         }
-        #timer { display: flex; justify-content: space-around; font-size: 1.2rem; }
-        .timer-unit { display: flex; flex-direction: column; }
-        .timer-num { font-size: 1.8rem; font-weight: bold; }
-
-        /* 5. INFO SECTION */
-        .info-section { width: 100%; max-width: 480px; text-align: center; margin-bottom: 40px; }
-        .info-section h2 { font-family: 'LoveFont', cursive; font-size: 3rem; text-transform: none; color: #600e0e; margin-top: 40px; }
-
-        .timeline { position: relative; padding: 20px 0; text-align: left; width: 100%; }
-        .timeline-item { position: relative; padding-left: 40px; margin-bottom: 25px; border-left: 2px solid #600e0e; margin-left: 6px; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px;
-            background: #a65954; border-radius: 50%; border: 2px solid #600e0e;
-        }
-        .time-stamp { font-weight: bold; color: #600e0e; font-size: 1.1rem; }
-        .event-desc { color: #a65954; text-transform: none; font-size: 0.95rem; display: block;}
-
-        /* FAQ Styling */
-        .faq-item { background: #fff8ee; border: 1px solid #a65954; margin-bottom: 12px; text-align: left; border-radius: 4px; cursor: pointer; width: 100%; overflow: hidden; }
-        .faq-question { padding: 18px 20px; display: flex; justify-content: space-between; color: #600e0e; font-weight: bold; font-size: 0.9rem; }
-        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #a65954; text-transform: none; font-size: 0.95rem; line-height: 1.6; }
-        .faq-item.active .faq-answer { max-height: 800px; padding-bottom: 20px; }
-
-        /* 6. BLESSING FUND */
-        .blessing-section {
-            width: 100%;
-            max-width: 480px;
-            margin-bottom: 60px;
-            padding: 40px 20px;
-            background-color: rgba(166, 89, 84, 0.1); 
-            border: 2px dashed #a65954;
-            border-radius: 15px;
-            text-align: center;
-        }
-        .blessing-section h2 { font-family: 'LoveFont', cursive; font-size: 2.8rem; text-transform: none; color: #600e0e; margin-bottom: 15px; }
-        .qr-container { background: white; padding: 15px; display: inline-block; border-radius: 10px; }
-        .qr-code-img { width: 220px; height: auto; display: block; }
     </style>
 </head>
 <body>
 
-    <div class="floral-wrapper">
-        <div class="invite-card">
-            <span class="symbol-囍">囍</span>
-            <div style="font-size: 0.85rem; letter-spacing: 2px;">Together with our parents</div>
-            <h1>Nicholas & Rae Enn</h1>
-            <div class="date-container">
-                <span>JULY</span> <div class="day-circle">11</div> <span>2026</span>
-            </div>
-            
-            <div class="details-box">
-                <strong style="color: #fff8ee;">Solemnisation</strong><br>
-                Bukit Batok Presbyterian Church | 10:00 AM<br>
-                <a href="https://maps.app.goo.gl/hGZvfpiNCxUK9JLx9" target="_blank" class="map-link">Open in Google Maps</a><br>
-                
-                <strong style="color: #fff8ee;">Lunch Reception</strong><br>
-                Shangri-La Singapore | 12:30 PM<br>
-                <a href="https://maps.app.goo.gl/FDcfWX9xy4nnuQ4s9" target="_blank" class="map-link">Open in Google Maps</a>
-            </div>
-
-            <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" target="_blank" class="btn">RSVP HERE</a>
+    <section class="section">
+        <h1 class="font-love hero-title">Nicholas & Rae Enn</h1>
+        <p style="letter-spacing: 5px; font-size: 1.2rem;">SATURDAY, 11 JULY 2026</p>
+        
+        <div id="countdown" style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
+            <div><span id="days" style="font-size: 2.5rem;">0</span><br><small>DAYS</small></div>
+            <div><span id="hours" style="font-size: 2.5rem;">0</span><br><small>HOURS</small></div>
+            <div><span id="mins" style="font-size: 2.5rem;">0</span><br><small>MINS</small></div>
         </div>
+    </section>
 
-        <div class="countdown-container">
-            <div id="timer">
-                <div class="timer-unit"><span class="timer-num" id="days">00</span><span>Days</span></div>
-                <div class="timer-unit"><span class="timer-num" id="hours">00</span><span>Hrs</span></div>
-                <div class="timer-unit"><span class="timer-num" id="mins">00</span><span>Mins</span></div>
-                <div class="timer-unit"><span class="timer-num" id="secs">00</span><span>Secs</span></div>
+    <section class="section" style="background-color: #fbf1e0; border-top: 1px solid var(--secondary-color); border-bottom: 1px solid var(--secondary-color);">
+        <h2 class="font-love" style="font-size: 3rem;">The Celebration</h2>
+        <div style="max-width: 500px; margin: auto;">
+            <div style="margin-bottom: 40px;">
+                <p style="font-size: 1.4rem; font-weight: bold; margin-bottom: 5px;">10:00 AM — SOLEMNISATION</p>
+                <p style="margin: 0;">Bukit Batok Presbyterian Church</p>
+                <p style="margin: 0; font-size: 0.9rem;">21 Bukit Batok Street 11, S659673</p>
+                <div style="width: 50px; height: 1px; background: var(--secondary-color); margin: 15px auto;"></div>
+            </div>
+            <div style="margin-bottom: 30px;">
+                <p style="font-size: 1.4rem; font-weight: bold; margin-bottom: 5px;">12:30 PM — WEDDING LUNCH</p>
+                <p style="margin: 0;">Shangri-La Singapore</p>
+                <p style="margin: 0; font-size: 0.9rem;">22 Orange Grove Road, S258350</p>
             </div>
         </div>
+    </section>
 
-        <div class="info-section">
-            <h2>The Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item"><span class="time-stamp">09:45 AM</span><span class="event-desc">Guest Arrival (Please reach 15 mins in advance)</span></div>
-                <div class="timeline-item"><span class="time-stamp">10:00 AM SHARP</span><span class="event-desc">Solemnisation Ceremony Starts</span></div>
-                <div class="timeline-item"><span class="time-stamp">11:45 AM</span><span class="event-desc">Transport leaves Church for Shangri-La</span></div>
-                <div class="timeline-item"><span class="time-stamp">12:00 PM</span><span class="event-desc">Wedding Lunch Reception Starts</span></div>
-                <div class="timeline-item"><span class="time-stamp">02:30 PM</span><span class="event-desc">Lunch Reception Closes</span></div>
-            </div>
-
-            <h2>Wedding FAQ</h2>
-            <div class="faq-item">
-                <div class="faq-question"><span>Ceremony & Timeline </span><span>+</span></div>
-                <div class="faq-answer">Please arrive 15 mins early to be seated comfortably.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question"><span>Is there parking at church?</span><span>+</span></div>
-                <div class="faq-answer">Yes! Public HDB parking is available near Bukit Batok Presbyterian Church.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question"><span>Parking at Shangri-la?</span><span>+</span></div>
-                <div class="faq-answer">Complimentary coupons are available (first come first served). Request via the RSVP link!</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question"><span>Dress Code</span><span>+</span></div>
-                <div class="faq-answer">Please come dressed in smart casual - we want you to feel good while celebrating with us!</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question"><span>When is the RSVP deadline?</span><span>+</span></div>
-                <div class="faq-answer">Please RSVP via the link by 12 June 2026.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question"><span>Can I bring a plus one?</span><span>+</span></div>
-                <div class="faq-answer">Due to venue capacity, we can only accommodate those specifically named on the invitation. Thank you for understanding!</div>
-            </div>
+    <section class="section">
+        <div class="transport-box">
+            <h2 class="font-love" style="font-size: 3rem; margin-top: 0;">Transport & Parking</h2>
+            <ul class="transport-list">
+                <li><strong>Church Parking:</strong> Parking is available at the church, with additional HDB carparks located right beside and opposite church.</li>
+                <li><strong>Shuttle Service:</strong> A 1-way shuttle bus is provided from church to Shangri-La for guests not driving. 
+                    <i style="display: block; font-size: 0.9rem; margin-top: 5px;">Please indicate in the RSVP if you require this.</i></li>
+                <li><strong>Shangri-La Parking:</strong> Complimentary coupons are available. 
+                    <i style="display: block; font-size: 0.9rem; margin-top: 5px;">Please request yours via the RSVP form.</i></li>
+            </ul>
         </div>
+    </section>
 
-        <div class="blessing-section">
-            <h2>Blessing Fund</h2>
-            <div style="color: #a65954; text-transform: none; margin-bottom: 20px;">
-                Your presence is our greatest gift. Should you wish to bless us further, scan below.
-            </div>
-            <div class="qr-container">
-                <img src="paylah.png" alt="Blessing QR" class="qr-code-img">
-                <div style="color: #a65954; text-transform: none; margin-bottom: 20px;">
-                Alternatively, you can pay now to 96155043 :)
-            </div>
+    <section class="section" id="blessing">
+        <h2 class="font-love" style="font-size: 3rem;">Blessing Fund</h2>
+        <p>If you wish to gift us digitally, you may use the details below.</p>
+        <div style="background: #fff; border: 1px solid var(--secondary-color); padding: 30px; display: inline-block; border-radius: 8px;">
+            <img src="paynow.jpeg" alt="PayNow" style="width: 200px; height: auto;"><br>
+            <button class="btn" style="font-size: 1rem; padding: 10px 20px; margin-top: 15px;" onclick="copyNum()">COPY: 96155043</button>
+            <p id="msg" style="font-size: 0.8rem; margin: 10px 0 0 0; color: green; height: 15px;"></p>
         </div>
-    </div>
+    </section>
+
+    <section class="section">
+        <a href="https://form.gov.sg/690b6b16024ee5eebb047f92" class="btn" target="_blank">RSVP HERE</a>
+    </section>
 
     <script>
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => item.classList.toggle('active'));
-        });
-
         const weddingDate = new Date("July 11, 2026 10:00:00").getTime();
-        setInterval(function() {
+        setInterval(() => {
             const now = new Date().getTime();
-            const distance = weddingDate - now;
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+            const diff = weddingDate - now;
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         }, 1000);
+
+        function copyNum() {
+            navigator.clipboard.writeText("96155043");
+            document.getElementById("msg").innerText = "Number Copied!";
+            setTimeout(() => { document.getElementById("msg").innerText = ""; }, 2000);
+        }
     </script>
 </body>
 </html>
