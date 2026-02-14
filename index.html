@@ -35,6 +35,53 @@
         /* HERO */
         .hero-title { font-size: clamp(3rem, 10vw, 4.5rem); margin-bottom: 10px; }
 
+        /* --- CAROUSEL STYLES --- */
+        .carousel-wrapper {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            overflow: hidden;
+            border: 10px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            background: white;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-container img {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+            color: var(--font-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+        /* ------------------------ */
+
         /* TRANSPORT BOX */
         .transport-box {
             background-color: #fff;
@@ -90,6 +137,7 @@
         @media (max-width: 600px) {
             .transport-box { padding: 30px 15px; }
             .transport-list li { font-size: 1rem; }
+            .carousel-container img { height: 300px; }
         }
     </style>
 </head>
@@ -124,8 +172,19 @@
             </div>
         </div>
     </section>
-     
+
+    <!-- NEW PHOTO CAROUSEL SECTION -->
     <section class="section">
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-container" id="carousel">
+                <img src="Floral background.png" alt="Engagement Photo 1">
+                <img src="Floral background.png" alt="Engagement Photo 2">
+                <img src="Floral background.png" alt="Engagement Photo 3">
+            </div>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        
         <a href="https://forms.gle/dJukh7EpRoWsWfUh8" class="btn" target="_blank">RSVP HERE</a>
     </section>
     
@@ -148,12 +207,11 @@
             </details>
             <details>
                 <summary>Closest Bus Stop (Church)</summary>
-                <div class="faq-content">The closest bus stop to Bukit Batok Presbyterian Church is Bt Batok St 11 – Opp Bt Batok Presby CH, about a 5-minute walk from the venue.<br> 
-                    Other nearby stops include Bt Batok West Ave 3 – Princess E Pr Sch and Bt Batok West Ave 6 – Blk 146/ Opp Blk 144.</div>
+                <div class="faq-content">The closest bus stop to Bukit Batok Presbyterian Church is Bt Batok St 11 – Opp Bt Batok Presby CH, about a 5-minute walk from the venue.</div>
             </details>
             <details>
                 <summary>Closest Bus Stop (Hotel)</summary>
-                <div class="faq-content">For Shangri-La Singapore, the nearest bus stops are Stevens Rd – Chelsea Gdns Condo and Orchard Rd – Delfi Orchard, both roughly a 9-minute walk from the hotel.</div>
+                <div class="faq-content">For Shangri-La Singapore, the nearest bus stops are Stevens Rd – Chelsea Gdns Condo and Orchard Rd – Delfi Orchard.</div>
             </details>
             <details>
                 <summary>Can I bring a plus one?</summary>
@@ -167,10 +225,8 @@
             <h2 class="font-love" style="font-size: 3rem; margin-top: 0;"> Transport & Parking</h2>
             <ul class="transport-list">
                 <li><strong>Church Parking:</strong> Parking is limited at the church, however, there are additional HDB carparks located right beside and opposite church.</li>
-                <li><strong>Shuttle Service:</strong> A 1-way shuttle bus is provided from church to Shangri-La for guests not driving. 
-                    <i style="display: block; font-size: 0.9rem; margin-top: 5px;">Please indicate in the RSVP if you require this.</i></li>
-                <li><strong>Shangri-La Parking:</strong> Complimentary coupons are available on a first come first serve basis. 
-                    <i style="display: block; font-size: 0.9rem; margin-top: 5px;">Please request yours via the RSVP form.</i></li>
+                <li><strong>Shuttle Service:</strong> A 1-way shuttle bus is provided from church to Shangri-La for guests not driving.</li>
+                <li><strong>Shangri-La Parking:</strong> Complimentary coupons are available on a first come first serve basis.</li>
             </ul>
         </div>
     </section>
@@ -195,6 +251,15 @@
             document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60 )) / 1000);
         }, 1000);
+
+        let currentIndex = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('#carousel img');
+            const totalSlides = slides.length;
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            const offset = -currentIndex * 100;
+            document.getElementById('carousel').style.transform = `translateX(${offset}%)`;
+        }
 
         function copyNum() {
             navigator.clipboard.writeText("96155043");
